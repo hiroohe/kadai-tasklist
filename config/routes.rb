@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
-  get 'users/new'
-  get 'users/create'
-  root to:'tasks#index'
+  root to: 'tasks#index'
   resources :tasks
   
   get 'login', to: 'sessions#new'

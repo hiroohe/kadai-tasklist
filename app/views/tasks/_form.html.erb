@@ -3,6 +3,7 @@
     <div id="error_explanation">
       <ul>
         <% task.errors.full_messages.each do |msg| %>
+            <%= render 'layouts/error_messages', model: f.object %>
           <li><%= msg %></li>
         <% end %>
       </ul>
