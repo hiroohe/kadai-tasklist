@@ -4,7 +4,6 @@ class TasksController < ApplicationController
 
   def index
     if logged_in?
-      @task = current_user.tasks.build  # form_with 用
       @tasks = current_user.tasks.order(id: :desc)
     end
   end
@@ -16,7 +15,6 @@ class TasksController < ApplicationController
       @task = Task.new
   end
   def create
-    #@task = Task.new(task_params)
     @task = current_user.tasks.build(task_params)
     if @task.save
       flash[:success] = 'タスク が正常に投稿されました'
